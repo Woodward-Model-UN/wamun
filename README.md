@@ -37,18 +37,27 @@ records GitHub specifies at your registrar.
   the header/footer wordmark, large and faint as the hero watermark. It's
   vector, so it stays sharp at any size and takes its color from CSS.
 - **Background motifs** (globe, country polygons, seated delegates, dot grid)
-  are SVGs injected by `site.js` and positioned by `motifs.css`. Adjust
-  `.motif { opacity }` to make them more or less visible.
+  are static SVGs injected by `site.js` and positioned by `motifs.css`.
+  Adjust `.motif { opacity }` to make them more or less visible.
 - **Timeline entries** are `<li class="tl-item">` blocks in `calendar.html`.
   Add `major` for a larger marker on big dates, `done` to fill the marker once
   an event has passed. Duplicate or delete blocks freely.
 - **The Instagram orb** is the floating link in the bottom-right corner, on
-  every page. It spins on its Y axis continuously and speeds up on hover.
-  Edit the handle in the `.ig-orb` anchor if it ever changes.
-- **Scroll behavior**: elements with class `reveal` fade up when scrolled into
-  view; motifs drift at different rates; a red progress rail tracks page
-  position. All of it is disabled automatically under
-  `prefers-reduced-motion`.
+  every page. It only spins on hover — no idle motion. Edit the handle in the
+  `.ig-orb` anchor if it ever changes.
+- **Motion**: the only animation on the site is a one-time settle-in on the
+  hero (`h1`, lede, buttons) when a page loads. Nothing animates on scroll —
+  an earlier version faded each section in as it scrolled into view, but that
+  meant content below the fold never rendered for anyone who didn't scroll
+  (a static export or a screen reader landing mid-page saw blank sections),
+  so it's gone. `prefers-reduced-motion` still disables the hero settle-in.
+- **No eyebrow badges.** Section headings stand on their own instead of
+  carrying a small-caps label above them. The `.section-label` class is for
+  a genuine standalone caption (the roster and gallery headings use it), not
+  decoration above another heading.
+- `.placard[data-code]` only draws its little tab when a `data-code`
+  attribute is actually set — used for real committee shorthand (`GA`, `CC`)
+  and real step numbers (`01`, `02`), not decoration.
 
 ## Content still needed
 

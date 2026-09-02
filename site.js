@@ -1,7 +1,5 @@
 (function () {
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  // ---------- inject ambient background motifs ----------
+  // ---------- ambient background motifs (static — no scroll-linked motion) ----------
   var globe =
     '<svg class="motif motif-globe" viewBox="0 0 400 400" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true">' +
       '<circle cx="200" cy="200" r="160"/>' +
@@ -57,52 +55,4 @@
   layer.setAttribute('aria-hidden', 'true');
   layer.innerHTML = globe + map + delegates + grid;
   document.body.insertBefore(layer, document.body.firstChild);
-
-  var bar = document.createElement('div');
-  bar.className = 'progress';
-  document.body.appendChild(bar);
-
-  // ---------- reveal on scroll ----------
-  var targets = document.querySelectorAll('.reveal');
-  if (reduce || !('IntersectionObserver' in window)) {
-    targets.forEach(function (el) { el.classList.add('in'); });
-  } else {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) {
-          e.target.classList.add('in');
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-    targets.forEach(function (el) { io.observe(el); });
-  }
-
-  if (reduce) return;
-
-  // ---------- parallax drift + progress rail ----------
-  var motifs = [
-    { el: layer.querySelector('.motif-globe'), rate: -0.05, spin: 0.015 },
-    { el: layer.querySelector('.motif-map'), rate: 0.035, spin: 0 },
-    { el: layer.querySelector('.motif-delegates'), rate: -0.02, spin: 0 },
-    { el: layer.querySelector('.motif-grid'), rate: 0.06, spin: 0 }
-  ].filter(function (m) { return m.el; });
-
-  var ticking = false;
-  function frame() {
-    var y = window.pageYOffset;
-    motifs.forEach(function (m) {
-      var r = m.spin ? ' rotate(' + (y * m.spin) + 'deg)' : '';
-      m.el.style.transform = 'translate3d(0,' + (y * m.rate) + 'px,0)' + r;
-    });
-    var h = document.documentElement.scrollHeight - window.innerHeight;
-    bar.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
-    ticking = false;
-  }
-
-  window.addEventListener('scroll', function () {
-    if (!ticking) { window.requestAnimationFrame(frame); ticking = true; }
-  }, { passive: true });
-
-  frame();
 })();
