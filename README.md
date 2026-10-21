@@ -1,6 +1,6 @@
 # Woodward Model UN — website
 
-Static site, no build step. 7 pages, shared stylesheet, one small JS file.
+Static site, no build step. 4 pages, shared stylesheet, one small JS file.
 
 ## Files
 
@@ -9,15 +9,12 @@ Static site, no build step. 7 pages, shared stylesheet, one small JS file.
 | `index.html` | Home |
 | `wamun-xi.html` | Conference: committees, logistics, registration |
 | `resources.html` | Position papers, procedure, resolutions |
-| `calendar.html` | Timeline of the club year (nav label: Timeline) |
 | `photos.html` | Club photo gallery |
-| `cabinet.html` / `secretariat.html` | Leadership rosters |
 | `styles.css` | All layout, type, and color (Times New Roman throughout, no webfonts) |
 | `motifs.css` | Background motif positioning |
 | `site.js` | Injects the background motifs |
 | `emblem.svg` | Globe-and-laurel mark. Each page carries its own inline copy, so a change here has to be pasted into every page |
-| `img/people/` | Cabinet and Secretariat headshots |
-| `guides/` | Committee background guides (PDF), linked from `wamun-xi.html` |
+| `guides/` | PDFs: the two committee background guides (linked from `wamun-xi.html`) and the WAMUN Handbook (linked from `resources.html`) |
 
 ## Deploy to GitHub Pages
 
@@ -40,15 +37,6 @@ records GitHub specifies at your registrar.
 - **Background motifs** (globe, country polygons, seated delegates, dot grid)
   are static SVGs injected by `site.js` and positioned by `motifs.css`.
   Adjust `.motif { opacity }` to make them more or less visible.
-- **Headshots** go in `img/people/` as `firstname-lastname.jpg` (square,
-  800×800). Both roster pages load from that folder, so a photo uploaded
-  anywhere else won't show. Someone without a photo gets an initials tile
-  (`<div class="photo"><span class="initials">`); once their photo is
-  uploaded, swap that for `<div class="photo has-img"><img ...>` like the
-  other cards.
-- **Timeline entries** are `<li class="tl-item">` blocks in `calendar.html`.
-  Add `major` for a larger marker on big dates, `done` to fill the marker once
-  an event has passed. Duplicate or delete blocks freely.
 - **The Instagram orb** is the floating link in the bottom-right corner, on
   every page. It only spins on hover — no idle motion. Edit the handle in the
   `.ig-orb` anchor if it ever changes.
@@ -60,7 +48,7 @@ records GitHub specifies at your registrar.
   so it's gone. `prefers-reduced-motion` still disables the hero settle-in.
 - **No eyebrow badges.** Section headings stand on their own instead of
   carrying a small-caps label above them. The `.section-label` class is for
-  a genuine standalone caption (the roster and gallery headings use it), not
+  a genuine standalone caption (the gallery heading uses it), not
   decoration above another heading.
 - `.placard[data-code]` only draws its little tab when a `data-code`
   attribute is actually set — used for real committee shorthand (`GA`, `CC`)
@@ -70,12 +58,9 @@ records GitHub specifies at your registrar.
 
 | Page | What's missing |
 |---|---|
-| `wamun-xi.html` | Delegate fee, dais chairs, drop-off and dress code, registration form |
-| `resources.html` | Position paper template, procedure sheet, resolution archive |
-| `calendar.html` | Real dates, event names, and locations for each timeline entry |
+| `wamun-xi.html` | Dais chair for each committee; drop-off location or campus map, dress code, and what to bring; registration form, deadline, and delegate fee |
+| `resources.html` | Position paper template and sample papers; archive of past resolutions |
 | `photos.html` | Real photos for the six placeholder tiles |
-| `cabinet.html` | Headshot for Raj Kapasi (currently an initials tile) |
-| `secretariat.html` | Headshot for Harlan Hubbs: the page already points at `img/people/harlan-hubbs.jpg`, so uploading that file fixes the broken image |
 
 Anything marked **Content to add** in a page is a placeholder meant to be
 replaced, not styled around.
