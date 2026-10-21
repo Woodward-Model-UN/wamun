@@ -274,3 +274,20 @@ footer a:hover{color:var(--blue);}
   font-family:'Times New Roman', Times, serif;font-size:34px;letter-spacing:.04em;
   color:var(--blue-un);
 }
+
+/* ---------- WAMUN committees + schedule ---------- */
+.placard .topic{font-size:18px;font-style:italic;color:var(--blue-deep);margin:-4px 0 12px;}
+.placard .facts{margin:18px 0 0;font-size:15px;}
+.placard .facts div{display:flex;gap:12px;align-items:baseline;padding:9px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.placard .facts dt{flex:none;width:60px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim);}
+.placard .facts dd{margin:0;color:var(--navy);}
+.placard > .btn{margin-top:20px;}
+
+.sched-note{max-width:680px;color:var(--ink-dim);margin:-16px 0 30px;}
+.sched{list-style:none;margin:6px 0 0;padding:0;}
+.sched li{display:grid;grid-template-columns:132px 1fr;gap:16px;padding:12px 0;border-top:1px solid var(--line);}
+.sched .t{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);padding-top:3px;}
+.sched .w{font-size:16px;color:var(--navy);}
+.sched .w span{display:block;font-size:14px;color:var(--ink-dim);}
+@media (max-width:520px){.sched li{grid-template-columns:1fr;gap:2px;}}
+.hero .when{position:relative;max-width:560px;margin:10px 0 0;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--blue-deep);}

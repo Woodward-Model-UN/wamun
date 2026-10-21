@@ -17,6 +17,7 @@ Static site, no build step. 7 pages, shared stylesheet, one small JS file.
 | `site.js` | Injects the background motifs |
 | `emblem.svg` | Globe-and-laurel mark. Each page carries its own inline copy, so a change here has to be pasted into every page |
 | `img/people/` | Cabinet and Secretariat headshots |
+| `guides/` | Committee background guides (PDF), linked from `wamun-xi.html` |
 
 ## Deploy to GitHub Pages
 
@@ -69,7 +70,7 @@ records GitHub specifies at your registrar.
 
 | Page | What's missing |
 |---|---|
-| `wamun-xi.html` | Date, venue, fee, committee topics, background guides, chairs, logistics, registration form |
+| `wamun-xi.html` | Delegate fee, dais chairs, drop-off and dress code, registration form |
 | `resources.html` | Position paper template, procedure sheet, resolution archive |
 | `calendar.html` | Real dates, event names, and locations for each timeline entry |
 | `photos.html` | Real photos for the six placeholder tiles |
