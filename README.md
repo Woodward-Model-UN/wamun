@@ -13,16 +13,16 @@ Static site, no build step. 7 pages, shared stylesheet, one small JS file.
 | `photos.html` | Club photo gallery |
 | `cabinet.html` / `secretariat.html` | Leadership rosters |
 | `styles.css` | All layout, type, and color (Times New Roman throughout, no webfonts) |
-| `motifs.css` | Background motif positioning + scroll animation styles |
-| `site.js` | Injects background motifs, runs scroll reveals and parallax |
-| `emblem.svg` | Globe-and-laurel mark (inlined into pages by the build; edit here) |
-| `images/` | Headshots and club photos |
+| `motifs.css` | Background motif positioning |
+| `site.js` | Injects the background motifs |
+| `emblem.svg` | Globe-and-laurel mark. Each page carries its own inline copy, so a change here has to be pasted into every page |
+| `img/people/` | Cabinet and Secretariat headshots |
 
 ## Deploy to GitHub Pages
 
-Already configured: **Settings → Pages**, source `main`, folder `/root`.
+Already configured: **Settings → Pages**, source `main`, folder `/ (root)`.
 Push to `main` and the site rebuilds automatically at
-`https://27lyu-pixel.github.io/wamun-site/`.
+`https://woodward-model-un.github.io/wamun/`.
 
 For a custom domain: **Settings → Pages → Custom domain**, then add the DNS
 records GitHub specifies at your registrar.
@@ -39,6 +39,12 @@ records GitHub specifies at your registrar.
 - **Background motifs** (globe, country polygons, seated delegates, dot grid)
   are static SVGs injected by `site.js` and positioned by `motifs.css`.
   Adjust `.motif { opacity }` to make them more or less visible.
+- **Headshots** go in `img/people/` as `firstname-lastname.jpg` (square,
+  800×800). Both roster pages load from that folder, so a photo uploaded
+  anywhere else won't show. Someone without a photo gets an initials tile
+  (`<div class="photo"><span class="initials">`); once their photo is
+  uploaded, swap that for `<div class="photo has-img"><img ...>` like the
+  other cards.
 - **Timeline entries** are `<li class="tl-item">` blocks in `calendar.html`.
   Add `major` for a larger marker on big dates, `done` to fill the marker once
   an event has passed. Duplicate or delete blocks freely.
@@ -67,7 +73,8 @@ records GitHub specifies at your registrar.
 | `resources.html` | Position paper template, procedure sheet, resolution archive |
 | `calendar.html` | Real dates, event names, and locations for each timeline entry |
 | `photos.html` | Real photos for the six placeholder tiles |
-| `cabinet.html` / `secretariat.html` | Names, roles, headshots |
+| `cabinet.html` | Headshot for Raj Kapasi (currently an initials tile) |
+| `secretariat.html` | Headshot for Harlan Hubbs: the page already points at `img/people/harlan-hubbs.jpg`, so uploading that file fixes the broken image |
 
 Anything marked **Content to add** in a page is a placeholder meant to be
 replaced, not styled around.
