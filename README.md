@@ -15,7 +15,7 @@ Static site, no build step. 4 pages plus a redirect, shared stylesheet, one smal
 | `motifs.css` | Background motif positioning |
 | `site.js` | Injects the background motifs |
 | `emblem.svg` | Globe-and-laurel mark. Each page carries its own inline copy, so a change here has to be pasted into every page |
-| `guides/` | PDFs: the two committee background guides (linked from `wamun-xii.html`) and the WAMUN Handbook (linked from `resources.html`) |
+| `guides/` | PDFs: the two committee background guides (linked from `wamun-xii.html`); the WAMUN Handbook, three sample position papers, and the resolution writing guide (linked from `resources.html`) |
 
 ## Deploy to GitHub Pages
 
@@ -60,7 +60,7 @@ records GitHub specifies at your registrar.
 | Page | What's missing |
 |---|---|
 | `wamun-xii.html` | Campus map with this year's locations and the drop-off point; registration forms for outside schools, independent delegates, and Woodward delegates |
-| `resources.html` | Position paper template and sample papers; archive of past resolutions |
+| `resources.html` | Archive of resolutions passed at past WAMUN conferences |
 | `photos.html` | Real photos for the six placeholder tiles |
 
 Anything marked **Content to add** in a page is a placeholder meant to be
