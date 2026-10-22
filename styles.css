@@ -194,10 +194,14 @@ footer a:hover{color:var(--blue);}
 /* ---------- WAMUN committees + schedule ---------- */
 .placard .topic{font-size:18px;font-style:italic;color:var(--blue-deep);margin:-4px 0 12px;}
 .placard .facts{margin:18px 0 0;font-size:15px;}
-.placard .facts div{display:flex;gap:12px;align-items:baseline;padding:9px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.placard .facts div{display:flex;gap:12px;align-items:baseline;padding:9px 0;border-top:1px solid var(--line);}
+.placard .facts div:last-child{border-bottom:1px solid var(--line);}
 .placard .facts dt{flex:none;width:60px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim);}
 .placard .facts dd{margin:0;color:var(--navy);}
 .placard > .btn{margin-top:20px;}
+.placard .bring{margin:0;padding-left:20px;font-size:15px;color:var(--ink-dim);}
+.placard .bring li{padding:2px 0;}
+.reg-facts{margin:0;max-width:680px;}
 
 .sched-note{max-width:680px;color:var(--ink-dim);margin:-16px 0 30px;}
 .sched{list-style:none;margin:6px 0 0;padding:0;}

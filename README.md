@@ -1,20 +1,21 @@
 # Woodward Model UN — website
 
-Static site, no build step. 4 pages, shared stylesheet, one small JS file.
+Static site, no build step. 4 pages plus a redirect, shared stylesheet, one small JS file.
 
 ## Files
 
 | File | What it is |
 |---|---|
 | `index.html` | Home |
-| `wamun-xi.html` | Conference: committees, logistics, registration |
+| `wamun-xii.html` | Conference: committees, logistics, registration |
+| `wamun-xi.html` | Redirect to `wamun-xii.html`, so links to the old WAMUN XI address still work |
 | `resources.html` | Position papers, procedure, resolutions |
 | `photos.html` | Club photo gallery |
 | `styles.css` | All layout, type, and color (Times New Roman throughout, no webfonts) |
 | `motifs.css` | Background motif positioning |
 | `site.js` | Injects the background motifs |
 | `emblem.svg` | Globe-and-laurel mark. Each page carries its own inline copy, so a change here has to be pasted into every page |
-| `guides/` | PDFs: the two committee background guides (linked from `wamun-xi.html`) and the WAMUN Handbook (linked from `resources.html`) |
+| `guides/` | PDFs: the two committee background guides (linked from `wamun-xii.html`) and the WAMUN Handbook (linked from `resources.html`) |
 
 ## Deploy to GitHub Pages
 
@@ -58,7 +59,7 @@ records GitHub specifies at your registrar.
 
 | Page | What's missing |
 |---|---|
-| `wamun-xi.html` | Dais chair for each committee; drop-off location or campus map, dress code, and what to bring; registration form, deadline, and delegate fee |
+| `wamun-xii.html` | Campus map with this year's locations and the drop-off point; registration forms for outside schools, independent delegates, and Woodward delegates |
 | `resources.html` | Position paper template and sample papers; archive of past resolutions |
 | `photos.html` | Real photos for the six placeholder tiles |
 
