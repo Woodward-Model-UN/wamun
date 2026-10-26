@@ -59,7 +59,7 @@ records GitHub specifies at your registrar.
 
 | Page | What's missing |
 |---|---|
-| `wamun-xii.html` | Campus map with this year's locations and the drop-off point; registration forms for outside schools, independent delegates, and Woodward delegates |
+| `wamun-xii.html` | Campus map with this year's locations and the drop-off point; registration forms for outside schools and independent delegates |
 | `resources.html` | Archive of resolutions passed at past WAMUN conferences |
 | `photos.html` | Real photos for the six placeholder tiles |
 
